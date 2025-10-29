@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/@fontsource/monaspace-neon@5.0.0/index.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Monaspace Neon', 'SF Mono', 'Consolas', monospace;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #010409;
+            border-bottom: 2px solid #30363d;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #8b949e;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .template-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-left: 4px solid #58a6ff;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .template-card:hover {
+            transform: translateX(5px);
+            border-left-color: #3fb950;
+        }
+
+        .template-title {
+            font-size: 1.5rem;
+            color: #58a6ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-number {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .template-use-case {
+            color: #3fb950;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .template-description {
+            color: #c9d1d9;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .template-props {
+            background: #010409;
+            border: 1px solid #30363d;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .template-props h4 {
+            color: #f0883e;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .template-props ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .template-props li {
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .template-props li::before {
+            content: "→ ";
+            color: #58a6ff;
+            margin-right: 0.5rem;
+        }
+
+        .code-block {
+            background: #010409;
+            border: 1px solid #30363d;
+            padding: 1rem;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: #3fb950;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #58a6ff;
+            background: transparent;
+            color: #58a6ff;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #58a6ff;
+            color: #0d1117;
+        }
+
+        .quick-start {
+            background: #161b22;
+            border: 2px solid #30363d;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border-left: 4px solid #3fb950;
+        }
+
+        .quick-start h2 {
+            color: #3fb950;
+            margin-bottom: 1rem;
+        }
+
+        .quick-start code {
+            background: #010409;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #30363d;
+            border-radius: 3px;
+            color: #58a6ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📧 Email Template Library</h1>
+        <p>6 production-ready templates built with react-email</p>
+    </div>
+
+    <div class="container">
+        <div class="quick-start">
+            <h2>🚀 Quick Start</h2>
+            <p style="margin-bottom: 1rem;">Install and preview:</p>
+            <div class="code-block">
+                <pre>npm install react-email @react-email/components react
+npm run dev  # Opens preview server at localhost:3000</pre>
+            </div>
+            <p>All templates are TypeScript-ready and work with Resend, Nodemailer, or any email provider.</p>
+        </div>
+
+        <div class="template-grid">
+            <!-- Template 1: Welcome -->
+            <div class="template-card">
+                <div class="template-number">Template #01</div>
+                <div class="template-title">Welcome Email</div>
+                <div class="template-use-case">Use case: New user onboarding</div>
+                <div class="template-description">
+                    Friendly welcome message with call-to-action button. Perfect for first impressions.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>userName - User's name</li>
+                        <li>productName - Your product name</li>
+                        <li>loginUrl - Link to login page</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;WelcomeEmail
+  userName="John"
+  productName="My App"
+  loginUrl="https://myapp.com"
+/&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Template 2: Password Reset -->
+            <div class="template-card">
+                <div class="template-number">Template #02</div>
+                <div class="template-title">Password Reset</div>
+                <div class="template-use-case">Use case: Password recovery flow</div>
+                <div class="template-description">
+                    Secure password reset with expiry warning and security tips.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>userName - User's name</li>
+                        <li>resetUrl - Password reset link with token</li>
+                        <li>expiryTime - How long link is valid</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;PasswordResetEmail
+  userName="John"
+  resetUrl="https://myapp.com/reset?token=xyz"
+  expiryTime="1 hour"
+/&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Template 3: Receipt -->
+            <div class="template-card">
+                <div class="template-number">Template #03</div>
+                <div class="template-title">Receipt / Invoice</div>
+                <div class="template-use-case">Use case: Payment confirmations</div>
+                <div class="template-description">
+                    Professional receipt with itemized breakdown and totals.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>userName - Customer name</li>
+                        <li>orderNumber - Order ID</li>
+                        <li>items - Array of products</li>
+                        <li>subtotal, tax, total - Price breakdown</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;ReceiptEmail
+  orderNumber="#12345"
+  items={[{ name, price, quantity }]}
+  total="$140.37"
+/&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Template 4: Notification -->
+            <div class="template-card">
+                <div class="template-number">Template #04</div>
+                <div class="template-title">Notification</div>
+                <div class="template-use-case">Use case: Status updates, alerts</div>
+                <div class="template-description">
+                    Flexible notification with 4 types: info, success, warning, error. Color-coded banners.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>notificationType - info | success | warning | error</li>
+                        <li>title - Notification headline</li>
+                        <li>message - Main message</li>
+                        <li>actionUrl, actionText - Optional button</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;NotificationEmail
+  notificationType="success"
+  title="Build Succeeded"
+  message="Your deployment completed"
+/&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Template 5: Weekly Digest -->
+            <div class="template-card">
+                <div class="template-number">Template #05</div>
+                <div class="template-title">Weekly Digest</div>
+                <div class="template-use-case">Use case: Newsletters, roundups</div>
+                <div class="template-description">
+                    Content digest with multiple items. Includes unsubscribe link for CAN-SPAM compliance.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>userName - User's name</li>
+                        <li>weekNumber - Week identifier</li>
+                        <li>items - Array of digest items</li>
+                        <li>unsubscribeUrl - Unsubscribe link</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;WeeklyDigestEmail
+  weekNumber="42"
+  items={[{ title, description, url }]}
+  unsubscribeUrl="https://myapp.com/unsub"
+/&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Template 6: Verification -->
+            <div class="template-card">
+                <div class="template-number">Template #06</div>
+                <div class="template-title">Verification Code</div>
+                <div class="template-use-case">Use case: Email verification, 2FA</div>
+                <div class="template-description">
+                    Large, clear verification code with expiry warning. Perfect for OTP codes.
+                </div>
+                <div class="template-props">
+                    <h4>Props:</h4>
+                    <ul>
+                        <li>userName - User's name</li>
+                        <li>verificationCode - 6-digit code</li>
+                        <li>expiryTime - How long code is valid</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+                    <pre>&lt;VerificationEmail
+  userName="John"
+  verificationCode="123456"
+  expiryTime="15 minutes"
+/&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem; padding: 2rem;">
+            <p style="color: #8b949e; font-size: 0.9rem;">
+                Built with react-email | Copy-paste ready | TypeScript support | All email clients
+            </p>
+        </div>
+    </div>
+</body>
+</html>
