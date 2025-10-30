@@ -2,7 +2,10 @@
 
 **6 production-ready email templates built with react-email**
 
-Preview all templates at: http://localhost:3000 (run `npm run dev`)
+🌐 **Live Gallery**: https://208ce13d.capability-dashboard.pages.dev/email-gallery/
+📖 **Getting Started Guide**: https://208ce13d.capability-dashboard.pages.dev/email-gallery/getting-started.html
+
+Preview locally: http://localhost:3000 (run `npm run dev`)
 
 ---
 
